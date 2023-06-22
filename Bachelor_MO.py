@@ -43,6 +43,7 @@ for t in time_frame:
 
         alpha = regression.params[0]
         beta = regression.params.get('SPI')
+        beta_list.append(beta)
 
         if direction == 'Buy':
             # calculate Abnormal Returns
@@ -95,7 +96,6 @@ for t in time_frame:
 summary = pd.DataFrame([CAAR_buy_list, T_test_buy, Rank_test_buy, CAAR_sell_list, T_test_sell, Rank_test_sell])
 
 print(summary)
-
     # calculate Z2 for buy
     # Wilcoxon_buy = sp.wilcoxon(ARi_list_buy[1])
     # p_value_buy = Wilcoxon_buy.pvalue
